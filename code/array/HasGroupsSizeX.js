@@ -74,6 +74,7 @@
 //     }
 
 // }
+// 更好的实现
 function hasGroupsSizeX(arr) {
     if (arr.length < 2) {
         return false;
@@ -94,7 +95,7 @@ function hasGroupsSizeX(arr) {
             if (arr[j] === arr[i]) {
                 tmp.push(arr[j])
             } else {
-                // 不相同 则判断是否为最小值
+                // 不相同 判断长度是否为最小长度
                 if (min > tmp.length) {
                     min = tmp.length;
                 }
