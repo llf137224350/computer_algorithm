@@ -1,4 +1,4 @@
-# computer_algorithm
+# 数据结构与算法
 
 javascript数据结构与算法实现
 
