@@ -15,3 +15,4 @@ javascript数据结构与算法实现
 | 排序 | code/sort/SelectionSortAlgorithm | 选择排序算法 |
 | 排序 | code/sort/MaximumGap | 最大间距 |
 | 排序 | code/sort/SortArrayByParity | 按奇偶排序数组 II |
+| 排序 | code/sort/FirstMissingPositive | 缺失的第一个正数 |
