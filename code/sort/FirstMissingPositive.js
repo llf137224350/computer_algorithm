@@ -1,9 +1,6 @@
 /**
 41. 缺失的第一个正数
 给你一个未排序的整数数组，请你找出其中没有出现的最小的正整数。
-
- 
-
 示例 1:
 
 输入: [1,2,0]
@@ -17,6 +14,7 @@
 输入: [7,8,9,11,12]
 输出: 1
  */
+// 解法一
 function firstMissingPositive(arr) {
     // 过滤小于1的数，因为不是正数
     arr = arr.filter(item => item > 0);
@@ -42,6 +40,45 @@ function firstMissingPositive(arr) {
         return 1;
     }
 }
-console.log(firstMissingPositive([1, 2, 0]));
-console.log(firstMissingPositive([3, 4, -1, 1]));
-console.log(firstMissingPositive([7, 8, 9, 11, 12]));
+// 解法二 更优
+function firstMissingPositiveV2(arr) {
+    // 过滤小于1的数，因为不是正数
+    arr = arr.filter(item => item > 0);
+    // 判断过滤后数组是否为空
+    if (arr.length) {
+        // 选择排序
+        let temp;
+        for (let i = 0; i < arr.length; i++) {
+            temp = arr[i];
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[j] < temp) {
+                    temp = arr[j];
+                    arr[j] = arr[i]
+                }
+            }
+            arr[i] = temp;
+            if (i === 0 && arr[i] !== 1) {
+                return 1;
+            } else {
+                // 不是最后一个元素了
+                if (arr[i + 1] !== undefined) {
+                    if (arr[i + 1] - arr[i] > 1) {
+                        return arr[i] + 1
+                    }
+                } else { // 已经是最后一个元素
+                    return arr.pop() + 1;
+                }
+            }
+        }
+    } else {
+        return 1;
+    }
+}
+// console.log(firstMissingPositive([1, 2, 0]));
+// console.log(firstMissingPositive([3, 4, -1, 1]));
+// console.log(firstMissingPositive([7, 8, 9, 11, 12]));
+
+
+console.log(firstMissingPositiveV2([1, 2, 0]));
+console.log(firstMissingPositiveV2([3, 4, -1, 1]));
+console.log(firstMissingPositiveV2([7, 8, 9, 11, 12]));
