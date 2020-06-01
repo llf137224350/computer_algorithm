@@ -22,4 +22,4 @@ javascript数据结构与算法实现
 | 排序     | code/sort/MaximumGap             | 最大间距               |
 | 排序     | code/sort/SortArrayByParity      | 按奇偶排序数组 II      |
 | 排序     | code/sort/FirstMissingPositive   | 缺失的第一个正数       |
-| 数据结构 | code/data_structure/cal_points   | 棒球比赛               |
+| 数据结构 | code/stack/cal_points   | 棒球比赛               |
