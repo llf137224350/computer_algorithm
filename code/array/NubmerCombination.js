@@ -1,3 +1,8 @@
+/*
+ * @Author: い 狂奔的蜗牛
+ * @Date: 2020-03-23 22:19:27
+ * @Description: 
+ */
 //  电话号码的字母组合
 //  给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。
 //  给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。
@@ -26,7 +31,7 @@ function constructor(arr) {
   return arr.length === 1 ? tempArr : constructor(arr)
 }
 
-export default (numbers) => {
+const a =  (numbers) => {
   let map = ['', 1, 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
   // 将输入的数字拆分为数组
   let numberArr = (numbers).toString().split('')
@@ -37,3 +42,5 @@ export default (numbers) => {
   // 对字母进行组合
   return constructor(inputConstructor)
 }
+
+console.log(a(2345));
